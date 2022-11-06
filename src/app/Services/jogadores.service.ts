@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { UUIDV4 } from 'sequelize/types';
-import {CriarJogadorDto} from '../app/dto/criar-jogador.dto'
-import {Jogador} from '../app/Interfaces/jogador.interface'
+import {CriarJogadorDto} from '../dto/criar-jogador.dto'
+import {Jogador} from '../Interfaces/jogador.interface'
 import {v4 as uuidv4} from 'uuid'
 
 @Injectable()
@@ -29,6 +29,7 @@ export class JogadoresService {
             rankingPosition: 1,
             urlFotoJogador: 'www.google.com.br/foto123.jpg'
         };
+        this.logger.log(`criaJogadorDto: ${JSON.stringify(jogador)}`)
         this.jogadores.push(jogador);
     }
 }
